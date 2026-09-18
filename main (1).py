@@ -3,7 +3,6 @@
 students = []
 attendance = []
 
-
 def add_student():
     student_id = input("Enter Student ID: ")
     name = input("Enter Student Name: ")
@@ -13,14 +12,12 @@ def add_student():
 
     print("Student added successfully!")
 
-
 def mark_attendance():
     if len(students) == 0:
         print("No students found.")
         return
 
     print("\nStudents:")
-    
     for i in range(len(students)):
         print(i + 1, ".", students[i][0], "-", students[i][1])
 
@@ -36,14 +33,11 @@ def mark_attendance():
     if status == "P":
         attendance[index].append("Present")
         print("Attendance marked as Present.")
-
     elif status == "A":
         attendance[index].append("Absent")
         print("Attendance marked as Absent.")
-
     else:
         print("Invalid attendance status.")
-
 
 def view_records():
     if len(students) == 0:
@@ -55,7 +49,6 @@ def view_records():
     for i in range(len(students)):
         student_id = students[i][0]
         name = students[i][1]
-
         records = attendance[i]
 
         present = records.count("Present")
@@ -74,14 +67,11 @@ def view_records():
         print("Attendance:", percentage, "%")
         print("Records:", records)
 
-
 # Main program
-
 while True:
-
-    print("\n==============================")
+    print("\n---------------------------------")
     print(" STUDENT ATTENDANCE MANAGEMENT SYSTEM")
-    print("==============================")
+    print("---------------------------------")
     print("1. Add Student")
     print("2. Mark Attendance")
     print("3. View Records")
@@ -91,16 +81,12 @@ while True:
 
     if choice == "1":
         add_student()
-
     elif choice == "2":
         mark_attendance()
-
     elif choice == "3":
         view_records()
-
     elif choice == "4":
         print("Thank you!")
         break
-
     else:
         print("Invalid choice. Please try again.")
